@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>
+        Дескриптор x вказує браузеру, для якої щільності екрану підходить ця
+        версія зображення.
+      </h2>
+      <div class="thumb first">
+        <img
+          srcset="
+            https://picsum.photos/id/237/320/240 1x,
+            https://picsum.photos/id/237/640/480 2x
+          "
+          src="https://picsum.photos/id/237/320/240"
+          alt="Cute puppy"
+        />
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <h2>Дескриптор w</h2>
+      <p>
+        Ми, як і раніше, надаємо одне і те саме зображення у різних розмірах,
+        але водночас даємо браузеру більше інформації, щоб він міг сам вибрати
+        необхідне зображення, виходячи зі щільності пікселів, розміру в'юпорту
+        та оригінального розміру зображення.
+      </p>
+      <div class="thumb">
+        <img
+          srcset="
+            https://picsum.photos/id/237/320/240    320w,
+            https://picsum.photos/id/237/640/480    640w,
+            https://picsum.photos/id/237/1280/960 12800w
+          "
+          src="https://picsum.photos/id/237/320/240"
+          alt="Опис зображення для всіх версій"
+        />
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <h2>Атрибут sizes</h2>
+      <p>
+        У разі використання дескриптора w, тобто прив'язки до фізичних розмірів
+        зображення, необхідно використовувати атрибут sizes, щоб підказати
+        браузеру приблизний розмір полотна, на якому в браузері буде малюватися
+        зображення. Розміри можна вказувати як у пікселях, так і у відносних
+        одиницях. Наприклад, якщо зображення на екрані завжди буде 300px,
+        достатньо вказати одне значення.
+      </p>
+      <div class="thumb">
+        <img
+          srcset="
+            https://picsum.photos/id/237/320/240    320w,
+            https://picsum.photos/id/237/640/480    640w,
+            https://picsum.photos/id/237/1280/960 12800w
+          "
+          sizes="320px"
+          src="https://picsum.photos/id/237/320/240"
+          alt="Опис зображення для всіх версій"
+        />
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <h2>Атрибут sizes</h2>
+      <p>
+        У разі, коли зображення повинно бути на 100% ширини в'юпорту на
+        мобільних пристроях до 600px, 300px на екранах 601-900px і 600px на
+        екранах ширше, значення sizes буде містити медіа-запити.
+      </p>
+      <p>
+        (min-width: 900px) 600px - при ширині в'юпорту від 900px, розмір
+        зображення 600px.
+      </p>
+      <p>
+        (min-width: 600px) 300px - при ширині в'юпорту від 600px, розмір
+        зображення 300px.
+      </p>
+      <p>
+        100vw - повна ширина в'юпорту. Значення за замовчуванням, яке вказується
+        останнім.
+      </p>
+
+      <img
+        srcset="
+          https://picsum.photos/id/237/320/240    320w,
+          https://picsum.photos/id/237/640/480    640w,
+          https://picsum.photos/id/237/1280/960 12800w
+        "
+        sizes="(min-width: 900px) 640px, (min-width: 600px) 320px, 100vw"
+        src="https://picsum.photos/id/237/320/240"
+        alt="Опис зображення для всіх версій"
+      />
+    </div>
+
+    <div class="wrapper">
+      <h2>Елемент picture. Кадрування</h2>
+      <p>
+        Атрибут media дозволяє визначити медіа-запит, який браузер буде
+        аналізувати для вибору елемента source. Якщо медіа-запит визначається як
+        помилковий (не підходить), то цей елемент source пропускається.
+      </p>
+      <div class="thumb-picture">
+        <picture>
+          <source
+            srcset="
+              https://picsum.photos/id/237/400/600  400w,
+              https://picsum.photos/id/237/800/1200 800w
+            "
+            media="(max-width: 600px)"
+            sizes="(min-width: 480px) 480px, 100vw"
+          />
+          <source
+            srcset="
+              https://picsum.photos/id/237/800/400   800w,
+              https://picsum.photos/id/237/1600/800 1600w
+            "
+            media="(min-width: 601px)"
+            sizes="(min-width: 800px) 800px, 100vw"
+          />
+          <img src="https://picsum.photos/id/237/300/200" alt="Cute puppy" />
+        </picture>
+      </div>
+    </div>
+  </body>
+</html>

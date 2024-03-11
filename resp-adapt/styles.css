@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* 
+ * Base container and element styles for mobile devices.
+ */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 1170px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.element {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  background-color: chartreuse;
+}
+
+.element:nth-child(even) {
+  background-color: coral;
+}
+/* 
+ * Override or add new styles for blocks on wider screens.
+ */
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .element {
+    flex-basis: calc((100% - 10px) / 2);
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    gap: 15px;
+  }
+
+  .element {
+    flex-basis: calc((100% - 30px) / 3);
+  }
+}
+
+/* ================================================================= */
+.wrapper {
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffc107;
+
+  /*  Text styles  */
+  text-align: center;
+  line-height: 180px;
+  font-size: 32px;
+  white-space: nowrap;
+}
+
+/* Set the maximum width of the responsive container. */
+.wrapper.responsive {
+  max-width: 1140px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+/* Set the base width of a adaptive container. */
+.wrapper.adaptive {
+  max-width: 400px;
+}
+
+@media screen and (min-width: 600px) {
+  .wrapper {
+    background-color: #00bcd4;
+  }
+  /* Change the current width of the adaptive container at each breakpoint. */
+  .wrapper.adaptive {
+    max-width: 600px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .wrapper {
+    background-color: #8bc34a;
+  }
+  /* Change the current width of the adaptive container at each breakpoint. */
+  .wrapper.adaptive {
+    max-width: 900px;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .wrapper {
+    background-color: #ff5252;
+  }
+  /* Change the current width of the adaptive container at each breakpoint. */
+  .wrapper.adaptive {
+    max-width: 1140px;
+  }
+}
+
+.wrapper .label {
+  margin-top: 0;
+}

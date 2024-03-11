@@ -1,0 +1,20 @@
+@import url(./basic-styles.css);
+
+.container {
+  min-width: 320px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list-item {
+  border: 2px solid #0040f2;
+  background-color: #e3e6ff;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}

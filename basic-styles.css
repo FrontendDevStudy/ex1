@@ -1,0 +1,28 @@
+/* Basic styles */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  /* min-height: calc(100vh - 100px); */
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 20px;
+  background-color: #e3e3e3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
