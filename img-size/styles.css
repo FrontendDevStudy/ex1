@@ -1,8 +1,4 @@
-.thumb.first {
-  width: 320px;
-  height: 240px;
-  margin: 0 auto;
-}
+
 
 img {
   display: block;
@@ -11,18 +7,21 @@ img {
 }
 
 @media screen and (min-width: 600px) {
+  .thumb.first,
   .thumb {
     max-width: 600px;
   }
 }
 
 @media screen and (min-width: 900px) {
+  .thumb.first,
   .thumb {
     max-width: 900px;
   }
 }
 
 @media screen and (min-width: 1140px) {
+  .thumb.first,
   .thumb {
     max-width: 1140px;
   }

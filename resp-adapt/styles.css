@@ -115,3 +115,19 @@ body {
 .wrapper .label {
   margin-top: 0;
 }
+
+.bg-image {
+  height: 400px;
+  background-image: url("./images/image.png");
+  background-size: cover;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  /* background-image: url(...); */
+  .bg-image {
+    background-image: url("./images/image@2x.png");
+  }
+}
