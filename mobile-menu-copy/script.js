@@ -1,13 +1,16 @@
-const menuButton = document.querySelector(".menu-button");
-const closeButton = document.querySelector(".close-button");
-const menu = document.querySelector(".mobile-menu");
+(() => {
+  const refs = {
+    openMenuBtn: document.querySelector("[data-menu-open]"),
+    closeMenuBtn: document.querySelector("[data-menu-close]"),
+    menu: document.querySelector("[data-menu]"),
+    body: document.querySelector("body"),
+  };
 
-menuButton.addEventListener("click", () => {
-  menuButton.classList.toggle("active");
-  menu.classList.toggle("active");
-});
+  refs.openMenuBtn.addEventListener("click", toggleMenu);
+  refs.closeMenuBtn.addEventListener("click", toggleMenu);
 
-closeButton.addEventListener("click", () => {
-  menuButton.classList.toggle("active");
-  menu.classList.toggle("active");
-});
+  function toggleMenu() {
+    refs.menu.classList.toggle("is-hidden");
+    refs.body.classList.toggle("no-scroll");
+  }
+})();
