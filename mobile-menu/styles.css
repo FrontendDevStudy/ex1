@@ -57,6 +57,10 @@
   cursor: pointer;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @media only screen and (min-width: 768px) {
   .header-nav {
     display: block;
